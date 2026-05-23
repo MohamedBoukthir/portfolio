@@ -29,8 +29,12 @@ export default function ContactPage() {
         <p className="text-sm text-muted-foreground mb-8">
           Get in touch with ME
         </p>
+        <BlurFade delay={BLUR_FADE_DELAY * 2}>
+          <div className="flex flex-col gap-5 mt-16">
+            <ContactForm/>
+          </div>
+        </BlurFade>
       </BlurFade>
-      <ContactForm/>
     </section>
   );
 }
