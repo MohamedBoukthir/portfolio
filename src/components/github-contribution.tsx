@@ -1,11 +1,12 @@
-"use client"
+"use client";
 
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
+import dynamic from "next/dynamic";
 import { GitHubCalendar } from 'react-github-calendar';
 
-export default function GithubContribution() {
+function GithubContribution() {
   return (
-    <div className="border rounded-xl p-10 relative">
+        <div className="border rounded-xl p-10 relative">
       <div className="absolute -top-4 border bg-primary z-10 rounded-xl px-4 py-1 left-1/2 -translate-x-1/2">
         <span className="text-background text-sm font-medium">
             GitHub Contributions
@@ -22,8 +23,11 @@ export default function GithubContribution() {
           }}
         />
       </div>
-        <GitHubCalendar username="MohamedBoukthir" fontSize={16} blockRadius={2} year={new Date().getFullYear()}/>
+      <GitHubCalendar username="MohamedBoukthir" fontSize={16} blockRadius={2} year={new Date().getFullYear()}/>
     </div>
   );
 }
 
+export default dynamic(() => Promise.resolve(GithubContribution), {
+  ssr: false,
+});
