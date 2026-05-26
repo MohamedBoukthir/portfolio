@@ -5,11 +5,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import ContactSection from "@/components/section/contact-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/experience-section";
 import { ArrowUpRight } from "lucide-react";
 import HackathonsSection from "@/components/section/hackathons-section";
+import GithubContribution from "@/components/github-contribution";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -159,7 +159,7 @@ export default function Page() {
       </section>
       <section id="contact">
         <BlurFade delay={BLUR_FADE_DELAY * 16}>
-          <ContactSection />
+          <GithubContribution />
         </BlurFade>
       </section>
     </main>
